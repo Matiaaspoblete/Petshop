@@ -1,0 +1,18 @@
+<app-slider></app-slider>
+<h2 style="text-align:center" class="my-4">Nuestros mejores Productos! </h2>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let Producto of producto">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top"  width="700" height="300"  [src]="Producto.imagen" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{Producto.nombre}}</h5>
+          <p class="card-text">{{Producto.descripcion}}</p>
+          <h4 class="card-number">{{ Producto.precio | currency:" ARS ":"symbol"}}</h4>
+          <a  routerLink="['/verproducto', Producto.id]"  class="btn btn-primary">Ver Producto</a>
+        </div>
+      </div>
+    </div>
+    
+<app-variedad></app-variedad>

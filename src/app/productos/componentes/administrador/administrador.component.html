@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Editar Productos</title>
+  </head>
+  <body>
+    <br>
+    <div style="text-align: center";>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Crear o Editar Producto </button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Crear Producto</h5>
+          </div>
+
+<!-- NOMBRE  -->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+    </div>
+
+<!-- PRECIO  -->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Precio</label>
+      <input type="number" class="form-control" id="precio" placeholder="Ingrese Precio">
+    </div>
+
+<!-- DESCRIPCION  -->
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Descripción</label>
+      <input type="text" class="form-control" id="descripcion" placeholder="Ingrese Descripción">
+    </div>
+          
+<!-- Imagen  -->
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Imagen</label>
+  <input type="text" class="form-control" id="imagen" placeholder="Ingrese Imagen">
+</div>
+
+<!-- Id  -->
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">ID</label>
+  <input type="text" class="form-control" id="id" placeholder="Ingrese su id">
+</div>
+
+<!-- BOTONES  -->
+<button class="btn btn-primary" id="crearProducts">Enviar</button>  
+<br>
+<button class="btn btn-primary" id="editProducts">Editar</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Imagen</th> 
+        <th scope="col">Id</th> 
+        <th scope="col">Eliminar</th>   
+  
+      </tr>
+    </thead>
+    <tbody id="info-row">
+    </tbody>
+  </table>
+    </body>
