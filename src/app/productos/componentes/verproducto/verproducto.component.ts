@@ -11,22 +11,22 @@ import {switchMap, tap} from "rxjs/operators";
 })
 export class VerproductoComponent implements OnInit {
 
-  producto! : Producto;
+  id: string | null = ""
+  producto : any;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    private _route: ActivatedRoute,
     private productoService : ProductService,
-  ) {}
-
+  ) { } 
   ngOnInit(): void {
-    this.activatedRoute.params
-      .pipe(
-        switchMap(({id}) =>  this.productoService.getProducto()),
-        tap(console.log)
-      )
-      .subscribe(producto => {
-        this.productoService = producto;
-      });
-  }
+    this.id = this._route.snapshot.paramMap.get('id');
+    console.log(this.id);
 
+    this.productoService.getProductbyid(this.id).subscribe(resp=>{
+    
+    this.producto = resp;
+    console.log(this.producto);
+  }
+  )
+}
 }

@@ -3,27 +3,24 @@ import { ProductService } from '../../services/producto.service';
 import { Producto } from '../../interfaces/producto';
 
 @Component({
-  selector: 'app-producto',
-  templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']
+  selector: 'app-perrosygatos',
+  templateUrl: './perrosygatos.component.html',
+  styleUrls: ['./perrosygatos.component.css']
 })
-export class ProductoComponent implements OnInit {
-
+export class PerrosygatosComponent implements OnInit {
   producto : Producto[] = [];
-
-
+  
   constructor(
     private productoService : ProductService,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-
     this.productoService.getProducto().subscribe(resp=>{
       console.log(resp);
     
     this.producto = resp;
-
   }
   )
-}
+  }
+
 }

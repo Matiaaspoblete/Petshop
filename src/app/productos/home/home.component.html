@@ -10,7 +10,7 @@
           <h5 class="card-title">{{Producto.nombre}}</h5>
           <p class="card-text">{{Producto.descripcion}}</p>
           <h4 class="card-number">{{ Producto.precio | currency:" ARS ":"symbol"}}</h4>
-          <a  routerLink="['/verproducto', Producto.id]"  class="btn btn-primary">Ver Producto</a>
+          <a  routerLink="/verproducto/{{Producto.id}}"  class="btn btn-primary">Ver Producto</a>
         </div>
       </div>
     </div>

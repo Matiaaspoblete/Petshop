@@ -8,6 +8,7 @@ import { VerproductoComponent } from './componentes/verproducto/verproducto.comp
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PerrosygatosComponent } from './componentes/perrosygatos/perrosygatos.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RouterModule } from '@angular/router';
     SliderComponent,
     VariedadComponent,
     VerproductoComponent,
-    HomeComponent
+    HomeComponent,
+    PerrosygatosComponent
   ],
   exports: [
     AdministradorComponent,
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
     SliderComponent,
     VariedadComponent,
     VerproductoComponent,
-    HomeComponent
+    HomeComponent,
+    PerrosygatosComponent
   ],
   imports: [
     CommonModule,
