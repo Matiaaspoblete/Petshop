@@ -5,6 +5,7 @@ import { ProductoComponent } from './productos/componentes/producto/producto.com
 import { VerproductoComponent } from './productos/componentes/verproducto/verproducto.component';
 import { HomeComponent } from './productos/home/home.component';
 import { PerrosygatosComponent } from './productos/componentes/perrosygatos/perrosygatos.component';
+import { ContactoComponent } from './productos/componentes/contacto/contacto.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path:'perrosygatos',
     component: PerrosygatosComponent
+  }, 
+  {
+    path: 'contacto',
+    component: ContactoComponent,
+    pathMatch: 'full'
   },
 
 ];

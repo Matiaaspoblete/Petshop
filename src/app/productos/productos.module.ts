@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PerrosygatosComponent } from './componentes/perrosygatos/perrosygatos.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PerrosygatosComponent } from './componentes/perrosygatos/perrosygatos.c
     VariedadComponent,
     VerproductoComponent,
     HomeComponent,
-    PerrosygatosComponent
+    PerrosygatosComponent,
+    ContactoComponent
   ],
   exports: [
     AdministradorComponent,
@@ -28,7 +30,8 @@ import { PerrosygatosComponent } from './componentes/perrosygatos/perrosygatos.c
     VariedadComponent,
     VerproductoComponent,
     HomeComponent,
-    PerrosygatosComponent
+    PerrosygatosComponent,
+    ContactoComponent
   ],
   imports: [
     CommonModule,
