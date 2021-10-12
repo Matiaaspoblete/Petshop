@@ -19,15 +19,22 @@ export class ComentariosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.comentarioService.getComentario().subscribe(resp=>{
-      console.log(resp);
-    this.comentario = resp;
-  }
-  )
+    this.getProducts();
+
+}
+getProducts(){
+  this.comentarioService.getComentario().subscribe(resp=>{
+    console.log(resp);
+
+  this.comentario = resp;
+
+}
+)
+  
 }
 onSubmit() {
   console.log(this.model);
-  this.comentarioService.addComentario(this.model).subscribe((response: Comentario)=> console.log(response));
+  this.comentarioService.addComentario(this.model).subscribe((response: Comentario)=> this.getProducts());
   
 }
 
