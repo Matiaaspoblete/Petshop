@@ -1,79 +1,112 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body class=" body">
+<div class="form">
+  <form (ngSubmit)="onSubmit()">
 
-    <title>Editar Productos</title>
-  </head>
-  <body>
-    <br>
-    <div style="text-align: center";>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Crear o Editar Producto </button>
+
+    <!-- ID  -->
+
+    <div class="form-group">
+      <label class="form-label" for="Id">Id</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Id"
+        required
+        [(ngModel)]="id"
+        name="Id"
+        #name="ngModel"
+        placeholder="Ingrese Id"
+      />
     </div>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Crear Producto</h5>
-          </div>
+    <!-- NOMBRE  -->
 
-<!-- NOMBRE  -->
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-    </div>
-
-<!-- PRECIO  -->
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Precio</label>
-      <input type="number" class="form-control" id="precio" placeholder="Ingrese Precio">
-    </div>
-
-<!-- DESCRIPCION  -->
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Descripción</label>
-      <input type="text" class="form-control" id="descripcion" placeholder="Ingrese Descripción">
-    </div>
-          
-<!-- Imagen  -->
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Imagen</label>
-  <input type="text" class="form-control" id="imagen" placeholder="Ingrese Imagen">
-</div>
-
-<!-- Id  -->
-
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">ID</label>
-  <input type="text" class="form-control" id="id" placeholder="Ingrese su id">
-</div>
-
-<!-- BOTONES  -->
-<button class="btn btn-primary" id="crearProducts">Enviar</button>  
-<br>
-<button class="btn btn-primary" id="editProducts">Editar</button>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
+    <div class="form-group">
+      <label class="form-label" for="nombre">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        required
+        [(ngModel)]="model.nombre"
+        name="nombre"
+        #name="ngModel"
+        placeholder="Ingrese su nombre"
+      />
     </div>
 
+      <!-- PRECIO  --> 
+
+    <div class="form-group">
+      <label class="form-label" for="precio">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        id="precio"
+        [(ngModel)]="model.precio"
+        name="precio"	
+        placeholder="Ingrese Precio"
+      />
+    </div>   
+
+    <!-- DESCRIPCION  --> 
+
+    <div class="form-group">
+      <label class="form-label" for="descripcion">Descripcion</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descripcion"
+        [(ngModel)]="model.descripcion"
+        name="descripcion"
+        placeholder="Ingrese Descripción"	
+      />
+    </div>
     
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Imagen</th> 
-        <th scope="col">Id</th> 
-        <th scope="col">Eliminar</th>   
-  
-      </tr>
-    </thead>
-    <tbody id="info-row">
-    </tbody>
-  </table>
-    </body>
+    <!-- IMAGEN  --> 
+l
+    <div class="form-group">
+      <label class="form-label" for="imagen">Imagen</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imagen"
+        [(ngModel)]="model.imagen"
+        name="imagen"	
+        placeholder="Ingrese link de Imagen"
+      />
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">
+      Enviar
+    </button>
+    <button type="submit" style="margin-left: 15px;" class="btn btn-primary" (click)="onEdit()">
+      Editar
+    </button>
+  </form>
+</div>
+
+    <div class="table">
+<table style="width:115rem;" class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Producto of producto">
+      <td>{{Producto.id}}</td>
+      <td>{{Producto.nombre}}</td>
+      <td>{{ Producto.precio | currency:" ARS ":"symbol"}}</td>
+      <td>{{Producto.descripcion}}</td>
+      <td colspan ='4'><img [src] = "Producto.imagen" alt=""  height='200' width='200' /></td>
+      <!--<td><button class="btn btn-primary" id="editProducts" (click)="onEdit(Producto.id)" >Editar</button></td>-->
+      <td><button class="btn btn-danger" id="editProducts" (click)="onDelete(Producto.id)" >Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>

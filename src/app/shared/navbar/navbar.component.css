@@ -1,3 +1,7 @@
 .navbar-nav > li.navbar-right {
     float: right !important;
   }
+
+  .admin{
+    align-content: right;
+  }

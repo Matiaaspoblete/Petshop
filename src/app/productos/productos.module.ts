@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PerrosygatosComponent } from './componentes/perrosygatos/perrosygatos.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
-
+import { ComentariosComponent } from './componentes/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
     VerproductoComponent,
     HomeComponent,
     PerrosygatosComponent,
-    ContactoComponent
+    ContactoComponent,
+    ComentariosComponent,
   ],
   exports: [
     AdministradorComponent,
@@ -31,7 +32,8 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
     VerproductoComponent,
     HomeComponent,
     PerrosygatosComponent,
-    ContactoComponent
+    ContactoComponent,
+    ComentariosComponent
   ],
   imports: [
     CommonModule,
