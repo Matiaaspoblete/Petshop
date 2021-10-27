@@ -1,50 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministradorComponent } from './productos/componentes/administrador/administrador.component';
-import { ProductoComponent } from './productos/componentes/producto/producto.component';
-import { VerproductoComponent } from './productos/componentes/verproducto/verproducto.component';
+import { CommonModule } from '@angular/common';
+import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { HomeComponent } from './productos/home/home.component';
-import { PerrosygatosComponent } from './productos/componentes/perrosygatos/perrosygatos.component';
-import { ContactoComponent } from './productos/componentes/contacto/contacto.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'producto',
-    component: ProductoComponent
-  },
-  {
-    path:'verproducto/:id',
-    component: VerproductoComponent
-  },
-  {
-    path:'administrador',
-    component: AdministradorComponent
-  },
-  {
-    path:'perrosygatos',
-    component: PerrosygatosComponent
-  }, 
-  {
-    path: 'contacto',
-    component: ContactoComponent,
-    pathMatch: 'full'
-  },
 
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
+  },
+  {
+    path: 'productos',
+    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosModule)
+  },
+  {
+    path: '404',
+    component: ErrorPageComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'productos/home'
+  }
 ];
 
 @NgModule({
+  declarations: [],
   imports: [
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
   exports: [

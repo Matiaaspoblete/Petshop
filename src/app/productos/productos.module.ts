@@ -6,11 +6,12 @@ import { SliderComponent } from './componentes/slider/slider.component';
 import { VariedadComponent } from './componentes/variedad/variedad.component';
 import { VerproductoComponent } from './componentes/verproducto/verproducto.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PerrosygatosComponent } from './componentes/perrosygatos/perrosygatos.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { ComentariosComponent } from './componentes/comentarios/comentarios.component';
+import { ProductoRoutingModule } from './productos-routing.module';
 
 @NgModule({
   declarations: [
@@ -33,12 +34,13 @@ import { ComentariosComponent } from './componentes/comentarios/comentarios.comp
     HomeComponent,
     PerrosygatosComponent,
     ContactoComponent,
-    ComentariosComponent
+    ComentariosComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    ReactiveFormsModule,
+    ProductoRoutingModule
   ]
 })
 export class ProductosModule { }

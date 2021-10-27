@@ -1,0 +1,26 @@
+<div class="container-fluid p-0">
+    <div class="row col-12 p-0 viewPortLogin m-0 login">
+        <div class="col-12 col-md-8 col-lg-5 text-center formularioLogin p-4 box-shadow-login rounded-lg">
+        <img src="../../../../assets/img/dog.png" width="150">
+        <h1 class="display-5">Login</h1>
+        <hr class="mb-3">
+        <form [formGroup]="form" autocomplete="off">
+            <div class="form-group">
+              <label>Usuario</label>
+              <input formControlName="user" #usuario type="text" class="form-control" id="usuario" aria-describedby="emailHelp"
+                    placeholder="Ingrese su usuario" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <label>Contraseña</label>
+              <input type="password" formControlName="password" #password class="form-control" id="password" placeholder="Ingrese su contraseña"
+                    required>
+        </div>
+          <button [disabled]="!form.valid" (click)="login()"
+                type="submit" class="btn-iniciar-sesion btn btn-primary btn-lg btn-block mb-4 mt-4 color-white">Iniciar Sesion</button>
+                <br>
+                <button routerLink="/auth/register" routerLinkActive="active" class="btn-iniciar-sesion btn btn-primary btn-lg btn-block mb-4 mt-4 color-white">No tienes cuenta? Registrate</button>
+        </form>
+      </div>
+    </div>
+  </div>
